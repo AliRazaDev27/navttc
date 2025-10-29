@@ -27,7 +27,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 </div>
             </div>
             <div className='add-to-cart'>
-                <button>Add to Cart</button>
+                <button className='bg-red-500'>Add to Cart</button>
             </div>
         </div>
     );
