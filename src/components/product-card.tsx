@@ -9,25 +9,26 @@ export default function ProductCard({ product }: { product: Product }) {
         (product.price * product.discountPercentage) / 100
     ).toFixed(2);
     return (
-        <div className="product-card">
-            <div className="product-image">
+        <div className="flex flex-col bg-[#cfcaca] border border-[#ccc] rounded-lg overflow-hidden w-[300px]">
+            <div>
                 <img src={product.thumbnail} alt={product.title} />
             </div>
-            <div className="product-info">
-                <h2 className="product-title">{product.title}</h2>
-                <p className="product-brand">{product.brand}</p>
-                <p className="product-description">{product.description}</p>
-                <div className="product-price">
-                    <span className="current-price">${discountedPrice}</span>
-                    <span className="original-price">${product.price.toFixed(2)}</span>
-                    <span className="discount">{product.discountPercentage}% off</span>
+            <div className="p-4">
+                <h2 className="text-xl font-bold m-0">{product.title}</h2>
+                <p className="text-sm text-[#666] mx-0 my-1">{product.brand}</p>
+                <p className="text-sm mx-0 my-2">{product.description}</p>
+                <div className="flex items-center mx-0 my-2">
+                    <span className="text-[1.2rem] font-bold text-[#e91e63]">${discountedPrice}</span>
+                    <span className="text-[[0.9rem] text-[#635f5f] line-through ml-2">${product.price.toFixed(2)}</span>
+                    <span className="text-[0.8rem] text-white bg-[#e91e63] px-1 py-2 rounded-sm ml-2 ">{product.discountPercentage}% off</span>
                 </div>
-                <div className="product-rating">
+                <div className="text-[0.9rem] mx-0 my-2">
                     <span>Rating: {product.rating}</span>
                 </div>
             </div>
-            <div className='add-to-cart'>
-                <button className='bg-red-500'>Add to Cart</button>
+            <div className='mt-auto'>
+                <button className='bg-red-500 w-full p-2.5 text-white rounded-lg cursor-pointer text-base'>
+                    Add to Cart</button>
             </div>
         </div>
     );
