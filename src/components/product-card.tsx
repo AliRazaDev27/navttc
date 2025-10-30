@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import type { Product } from '../../types/index';
 export default function ProductCard({ product }: { product: Product }) {
     console.log(product)
@@ -27,9 +28,11 @@ export default function ProductCard({ product }: { product: Product }) {
                 </div>
             </div>
             <div className='mt-auto'>
-                <button className='bg-blue-600 hover:bg-blue-700 w-full p-2.5 text-white rounded-lg cursor-pointer text-base'>
+                <Link to={`/${product.id}`}>
+                <button  className='bg-blue-600 hover:bg-blue-700 w-full p-2.5 text-white rounded-lg cursor-pointer text-base'>
                 Details
                 </button>
+                </Link>
             </div>
         </div>
     );

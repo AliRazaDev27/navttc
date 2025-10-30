@@ -4,11 +4,16 @@ import './index.css'
 import App from './App.tsx'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
+import ProductDetails from './pages/product-details.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+  },
+  {
+    path: "/:id",
+    element: <ProductDetails/>
   }
 ]);
 
