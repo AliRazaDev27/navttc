@@ -1,9 +1,11 @@
+import { useRef } from "react";
+
 interface HeaderProps{
   setPage:React.Dispatch<React.SetStateAction<number>>
   setSearchTerm:React.Dispatch<React.SetStateAction<string>>
 }
 export default function Header({setPage,setSearchTerm}:HeaderProps){
-
+  const cancelRef = useRef(0);
   const handleNext = ()=>{
     setPage((prev)=>prev+1);
   }
@@ -12,7 +14,13 @@ export default function Header({setPage,setSearchTerm}:HeaderProps){
     setPage((prev)=>prev-1);
   }
   const handleSearchTerm = (e:React.ChangeEvent<HTMLInputElement>)=>{
-    setSearchTerm(e.target.value);
+    if(cancelRef.current){
+      clearTimeout(cancelRef.current);
+    }
+    const cancelID = setTimeout(() => {
+      setSearchTerm(e.target.value);
+    }, 1000);
+    cancelRef.current = cancelID;
   }
   return(
     <header className="flex items-center justify-between mt-4">
