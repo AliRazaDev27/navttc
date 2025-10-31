@@ -10,10 +10,18 @@ import {
   DialogFooter,
   DialogClose
 } from "@/components/ui/dialog";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/features/cart/cartSlice";
 
 
 export default function DialogAddToCart({ product }: { product: Product }) {
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ product, quantity }));
+
+  };
 
   return (
     <Dialog>
@@ -61,7 +69,9 @@ export default function DialogAddToCart({ product }: { product: Product }) {
   <DialogClose asChild>
     <button className="bg-red-400 hover:bg-red-500 text-gray-200 px-4 py-2 rounded-md">Cancel</button>
   </DialogClose>
-  <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Confirm</button>
+  <DialogClose asChild>
+  <button onClick={handleAddToCart} className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Confirm</button>
+  </DialogClose>
 </DialogFooter>
       </DialogContent>
     </Dialog>
