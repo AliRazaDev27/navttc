@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import type { Product } from "../../types";
+import DialogAddToCart from "@/components/dialog-add-to-cart";
 
 export default function ProductDetails() {
   const [data,setData] = useState<Product|null>(null);
@@ -56,9 +57,7 @@ fetch(`https://dummyjson.com/products/${params.id}`)
             <div className="mt-4">
               <span className="text-gray-400">Category: {data.category}</span>
             </div>
-            <button className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-md">
-              Checkout
-            </button>
+<DialogAddToCart product={data} />
           </div>
         </div>
       )}
