@@ -17,6 +17,13 @@ export default function Products({searchTerm = "",LIMIT=3,PAGE=1}:{searchTerm?:s
       {
         data && data.map((item,index) => <ProductCard key={index} product={item} />)
       }
+      {
+        data.length === 0 && (<>
+        <div className='bg-gray-700 animate-pulse h-[80vh] rounded-lg'/>
+        <div className='bg-gray-700 animate-pulse h-[80vh] rounded-lg'/>
+        <div className='bg-gray-700 animate-pulse h-[80vh] rounded-lg'/>
+        </>)
+      }
     </div>
   );
 }

@@ -18,9 +18,9 @@ fetch(`https://dummyjson.com/products/${params.id}`)
     }
   }, [data]);
   return (
-    <div className="flex flex-col gap-4">
+    <div>
       {data && (
-        <div className="grid grid-cols-2 px-6 py-8 rounded-3xl max-w-4xl place-items-center gap-4 border bg-neutral-700">
+        <div className="mx-auto grid grid-cols-2 px-6 py-8 rounded-3xl max-w-5xl place-items-center gap-4 border bg-neutral-700">
           <div>
             <img src={activeImage} alt={data.title} />
           </div>

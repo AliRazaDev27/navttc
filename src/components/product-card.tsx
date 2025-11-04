@@ -12,7 +12,7 @@ export default function ProductCard({ product }: { product: Product }) {
     return (
         <div className="flex flex-col bg-[#cfcaca] border border-[#ccc] rounded-lg overflow-hidden w-[300px]">
             <div>
-                <img src={product.thumbnail} alt={product.title} />
+                <img src={product.thumbnail} alt={product.title} width={300} height={300} />
             </div>
             <div className="p-4">
                 <h2 className="text-xl font-bold m-0 line-clamp-1">{product.title}</h2>
