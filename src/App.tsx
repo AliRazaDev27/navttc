@@ -1,4 +1,4 @@
-import Header from "./components/header";
+import Pagination from "./components/pagination";
 import Products from "./pages/products";
 import { useState } from "react";
 
@@ -7,8 +7,8 @@ export default function App() {
   const [searchTerm,setSearchTerm] = useState("");
   return (
     <div>
-      <Header setPage={setPage} setSearchTerm={setSearchTerm}/>
       <Products searchTerm={searchTerm} PAGE={page}/>
+      <Pagination setPage={setPage}/>
     </div>
   );
 }

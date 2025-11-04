@@ -17,7 +17,7 @@ export default function ModelCard() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <button className="px-4 py-5 rounded-full font-semibold bg-green-600 text-white relative">
+        <button className="size-14 flex items-center justify-center rounded-full font-semibold bg-green-600 text-white relative">
           Cart
           {cartItems.length > 0 && (
             <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">

@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+*{
+  outline: 1px solid red;
+}
+
 @custom-variant dark (&:is(.dark *));
 :root {
   interpolate-size: allow-keywords;

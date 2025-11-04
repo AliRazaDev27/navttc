@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router";
+import { useParams } from "react-router";
 import type { Product } from "../../types";
 import DialogAddToCart from "@/components/dialog-add-to-cart";
-import ModelCard from "@/components/model-cart";
 
 export default function ProductDetails() {
   const [data,setData] = useState<Product|null>(null);
@@ -20,14 +19,6 @@ fetch(`https://dummyjson.com/products/${params.id}`)
   }, [data]);
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex items-center justify-between">
-      <Link to="/">
-        <button className="bg-blue-500 hover:bg-blue-600 cursor-pointer text-white rounded-lg px-5 py-2.5 ">Back</button>
-      </Link>
-      <div>
-        <ModelCard/>
-      </div>
-      </div>
       {data && (
         <div className="grid grid-cols-2 px-6 py-8 rounded-3xl max-w-4xl place-items-center gap-4 border bg-neutral-700">
           <div>
