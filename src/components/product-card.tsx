@@ -10,7 +10,7 @@ export default function ProductCard({ product }: { product: Product }) {
         (product.price * product.discountPercentage) / 100
     ).toFixed(2);
     return (
-        <div className="flex flex-col bg-[#cfcaca] border border-[#ccc] rounded-lg overflow-hidden w-[300px]">
+        <div className="flex flex-col bg-[#cfcaca] border border-[#ccc] rounded-lg overflow-hidden w-full">
             <div>
                 <img src={product.thumbnail} alt={product.title} width={300} height={300} />
             </div>

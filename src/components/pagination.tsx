@@ -1,13 +1,14 @@
-interface PaginationProps{
-  setPage:React.Dispatch<React.SetStateAction<number>>
-}
-export default function Pagination({setPage}:PaginationProps){
+import { useSearchParams } from "react-router";
+
+export default function Pagination(){
+  const [searchParams,setSearchParams] = useSearchParams();
+  const page = parseInt(searchParams.get("page") || '1');
   const handleNext = ()=>{
-    setPage((prev)=>prev+1);
+    setSearchParams({page: (page+1).toString()});
   }
 
   const handlePrev = ()=>{
-    setPage((prev)=>prev-1);
+    setSearchParams({page: (page-1).toString()});
   }
   return(
       <div className="flex items-center justify-between gap-4 my-4">

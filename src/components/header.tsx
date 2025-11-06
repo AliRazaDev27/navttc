@@ -4,7 +4,7 @@ import ModelCart from "./model-cart";
 export default function Header(){
   return(
     <>
-    <header className="w-5xl flex items-center justify-between my-4">
+    <header className="w-full flex items-center justify-between my-4">
       <p className="text-white font-semibold text-3xl">
         <Link to="/">Shopwave</Link>
       </p>
