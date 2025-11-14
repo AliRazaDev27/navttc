@@ -1,13 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.tsx'
-import ProductDetails from './pages/product-details.tsx';
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import store from './store'
 import { Provider } from 'react-redux'
-import Header from './components/header.tsx';
+import Header from './components/header';
+import Homepage from './pages/homepage';
 
 const router = createBrowserRouter([
   {
@@ -15,15 +14,11 @@ const router = createBrowserRouter([
     element: <Header/>,
     children: [
       {
-        index: true,
-        element: <App/>,
-      },
-      {
-        path: "/:id",
-        element: <ProductDetails/>
-      },
+        index:true,
+        element: <Homepage/>
+      }
     ]
-  }
+  },
 ]);
 
 createRoot(document.getElementById('root')!).render(
