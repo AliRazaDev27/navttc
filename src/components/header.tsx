@@ -8,7 +8,7 @@ import searchMobile from "@/assets/search_mobile.svg"
 export default function Header(){
   return(
     <>
-    <header className="w-full max-w-6xl mx-auto my-6 flex items-center gap-4 md:gap-12 px-6">
+    <header className="w-full max-w-6xl mx-auto px-6 sm:px-8 md:px-12 py-3 sm:py-4 md:py-5 flex items-center gap-4 md:gap-12">
       <nav className="md:hidden">
         <img src={menu} alt="" />
       </nav>
@@ -21,13 +21,14 @@ export default function Header(){
           <li>Brands</li>
         </ul>
       </nav>
-      <form className="md:grow ms-auto md:ms-0">
-      <div className="relative flex items-center rounded-3xl ps-4 focus-within:outline  bg-[#F0F0F0] ">
-        <div className="static md:absolute">
-          <img src={search} alt="" className="hidden md:block" />
-          <img src={searchMobile} alt="" className="md:hidden"/>
+      <div className="flex items-center gap-4 ms-auto lg:ms-0 lg:grow">
+      <form className="lg:grow">
+      <div className="relative flex items-center rounded-3xl lg:ps-4 focus-within:outline  bg-[#F0F0F0] ">
+        <div className="static lg:absolute">
+          <img src={search} alt="" className="hidden lg:block" />
+          <img src={searchMobile} alt="" className="lg:hidden"/>
         </div>
-        <input type="text" className="hidden md:block ps-8 pe-4 py-3 w-full outline-none" placeholder="Search for products..." />
+        <input type="text" className="hidden lg:block ps-8 pe-4 py-3 w-full outline-none" placeholder="Search for products..." />
       </div>
       </form>
       <div className="flex items-center gap-4">
@@ -37,6 +38,7 @@ export default function Header(){
         <button>
           <img src={profile} alt="" />
         </button>
+      </div>
       </div>
     </header>
     <Outlet/>

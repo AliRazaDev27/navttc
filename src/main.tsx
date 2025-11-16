@@ -7,6 +7,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import Header from './components/header';
 import Homepage from './pages/homepage';
+import Signup from './pages/signup';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         index:true,
         element: <Homepage/>
+      },
+      {
+        path: "/signup",
+        element: <Signup/>
       }
     ]
   },
