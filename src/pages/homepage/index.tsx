@@ -3,7 +3,6 @@ import { Link } from "react-router"
 export default function Homepage(){
   return(
     <main>
-      <h1>test</h1>
       <section className="w-full md:bg-[url('/src/assets/hero-desktop.png')] bg-contain bg-right bg-no-repeat  bg-[#F2F0F1]">
         <div className="md:ms-20 px-4 md:px-0 py-8 md:py-16  flex flex-col justify-center gap-3 md:gap-4">
           <div className="text-4xl md:text-6xl font-bold">
@@ -34,6 +33,6 @@ export default function Homepage(){
           <img src={hero} alt="" className="w-full"/>
         </div>
       </section>
-    </main>
+      </main>
   )
 }
