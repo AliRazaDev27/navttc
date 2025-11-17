@@ -5,14 +5,14 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import store from './store'
 import { Provider } from 'react-redux'
-import Header from './components/header';
-import Homepage from './pages/homepage';
+// import Header from './components/header';
+// import Homepage from './pages/homepage';
 import Shop from './pages/shop';
 import Signup from './pages/signup';
 import Signin from './pages/signin';
 
 import Nav from './components/landing-page/nav.tsx';
-import Homepage2 from './components/landing-page/homepage.tsx';
+import Homepage from './components/landing-page/homepage.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
