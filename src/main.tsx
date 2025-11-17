@@ -7,6 +7,7 @@ import store from './store'
 import { Provider } from 'react-redux'
 import Header from './components/header';
 import Homepage from './pages/homepage';
+import Shop from './pages/shop';
 import Signup from './pages/signup';
 import Signin from './pages/signin';
 
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         index:true,
         element: <Homepage/>
+      },
+      {
+        path:"/shop",
+        element: <Shop/>
       },
       {
         path: "/signup",
