@@ -2,8 +2,17 @@ import type { FormEvent } from "react";
 import { Link } from "react-router";
 
 export default function Signup() {
-  const handleSumbit = (e:FormEvent)=>{
+  const handleSumbit = (e:FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get('email');
+    const password = formData.get('password');
+    if(!email || !password) return
+    fetch('http://localhost:3000/auth/signin', {
+      method: 'POST',
+      body: formData,
+    }).then(res=>res.json()).then(data=>console.log(data));
+
     // somehow grab the data
   }
   return (
