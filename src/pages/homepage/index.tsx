@@ -33,6 +33,6 @@ export default function Homepage(){
           <img src={hero} alt="" className="w-full"/>
         </div>
       </section>
-    </main>
+      </main>
   )
 }
