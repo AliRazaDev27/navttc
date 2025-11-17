@@ -11,10 +11,12 @@ import Shop from './pages/shop';
 import Signup from './pages/signup';
 import Signin from './pages/signin';
 
+import Nav from './components/landing-page/nav.tsx';
+import Homepage2 from './components/landing-page/homepage.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Header/>,
+    element: <Nav/>,
     children: [
       {
         index:true,
