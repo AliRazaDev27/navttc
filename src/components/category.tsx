@@ -99,35 +99,35 @@ export default function Category() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6">
-            <div className="p-4 border rounded-xl">
+            <div className="p-4 rounded-xl">
               <img className="w-full h-52 rounded-lg mb-3 " src={Shirt1} alt="shirt1" />
               <h3 className="font-medium mb-1">Gradient Graphic T-shirt</h3>
               <p className="text-gray-500 text-sm mb-1">⭐⭐⭐☆ (3.5)</p>
               <p className="font-semibold">$145</p>
             </div>
 
-            <div className="p-4 border rounded-xl ">
+            <div className="p-4 rounded-xl ">
               <img className="w-full h-52 rounded-lg mb-3 " src={Shirt2} alt="shirt2" />
               <h3 className="font-medium mb-1">Polo With Tipping Details</h3>
               <p className="text-gray-500 text-sm mb-1">⭐⭐⭐⭐☆ (4.5)</p>
               <p className="font-semibold">$180</p>
             </div>
 
-            <div className="p-4 border rounded-xl">
+            <div className="p-4 rounded-xl">
               <img className="w-full h-52 rounded-lg mb-3 " src={Shirt3} alt="shirt3" />
               <h3 className="font-medium mb-1">Black Striped T-shirt</h3>
               <p className="text-gray-500 text-sm mb-1">⭐⭐⭐⭐⭐ (5.0/5)</p>
               <p className="font-semibold">$120</p>
             </div>
 
-            <div className="p-4 border rounded-xl">
+            <div className="p-4 rounded-xl">
               <img className="w-full h-52 rounded-lg mb-3 " src={Shirt4} alt="shirt4" />
               <h3 className="font-medium mb-1">Sinny fit Jeans</h3>
               <p className="text-gray-500 text-sm mb-1">⭐⭐⭐☆ (3.5)</p>
               <p className="font-semibold">$240</p>
             </div>
 
-            <div className="p-4 border rounded-xl hover:shadow-md transition">
+            <div className="p-4 rounded-xl hover:shadow-md transition">
               <img className="w-full h-52 rounded-lg mb-3 " src={Shirt5} alt="shirt5" />
               <h3 className="font-medium mb-1">Checkered Shirt</h3>
               <p className="text-gray-500 text-sm mb-1">⭐⭐⭐⭐☆ (4.5)</p>
