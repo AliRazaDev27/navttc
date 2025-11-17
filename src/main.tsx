@@ -34,8 +34,8 @@ const router = createBrowserRouter([
         path: "/signin",
         element: <Signin/>
       }
-    ]
-  },
+     ]
+     }
 ]);
 
 createRoot(document.getElementById('root')!).render(
