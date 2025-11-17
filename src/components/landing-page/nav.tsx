@@ -5,7 +5,7 @@ import search from "@/assets/search.svg"
 import menu from "@/assets/menu.svg"
 import searchMobile from "@/assets/search_mobile.svg"
 
-export default function Header(){
+export default function Nav(){
   return(
     <>
     <header className="w-full max-w-6xl mx-auto my-6 flex items-center gap-4 md:gap-12 px-6">
