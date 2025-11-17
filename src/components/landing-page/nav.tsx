@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import cart from "@/assets/cart.svg"
 import profile from "@/assets/profile.svg"
 import search from "@/assets/search.svg"
@@ -12,10 +12,12 @@ export default function Nav(){
       <nav className="md:hidden">
         <img src={menu} alt="" />
       </nav>
-      <h1 className="text-2xl font-bold md:text-4xl md:font-extrabold">SHOP.CO</h1>
+      <h1 className="text-2xl font-bold md:text-4xl md:font-extrabold">
+        <Link to="/">SHOP.CO</Link>
+      </h1>
       <nav className="hidden sm:block">
         <ul className="flex items-center gap-4 font-semibold">
-          <li>Shop</li>
+          <li><Link to="/shop">Shop</Link></li>
           <li>On Sale</li>
           <li>New Arrivals</li>
           <li>Brands</li>

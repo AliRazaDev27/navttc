@@ -1,8 +1,12 @@
-import React from "react";
 import { FaFacebook,  FaInstagram, FaTwitter } from "react-icons/fa";
+import { Outlet } from "react-router";
+import Newsletter from "./newsletter";
 
-const FooterSection: React.FC = () => {
+export default function Footer(){
   return (
+    <>
+    <Outlet/>
+    <Newsletter/>
     <footer className="bg-white border-t mt-20 pt-16 pb-10">
       <div className="max-w-6xl mx-auto px-6">
 
@@ -97,7 +101,6 @@ const FooterSection: React.FC = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
-
-export default FooterSection;

@@ -13,13 +13,17 @@ import Signin from './pages/signin';
 
 import Nav from './components/landing-page/nav.tsx';
 import Homepage from './components/landing-page/homepage.tsx';
-import ProductDetails from './components/product-page.tsx';
+import Footer from './components/footer.tsx';
+import Product from './pages/product/index.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Nav/>,
     children: [
       {
+        element: <Footer/>,
+        children: [
+{
         index:true,
         element: <Homepage/>
       },
@@ -28,8 +32,10 @@ const router = createBrowserRouter([
         element: <Shop/>
       },
       {
-        path:"/productDetails",
-        element: <ProductDetails/>
+        path:"/product",
+        element: <Product/>
+      },
+        ]
       },
       {
         path: "/signup",

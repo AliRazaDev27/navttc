@@ -1,7 +1,6 @@
-import React from "react";
 import { Mail } from "lucide-react";
 
-const NewsletterSection: React.FC = () => {
+export default function Newsletter(){
   return (
     <section className="max-w-6xl mx-auto px-6 mt-20 mb-20">
       <div className="bg-black text-white rounded-2xl py-12 px-8 md:px-16 flex flex-col md:flex-row items-center justify-between gap-6">
@@ -34,5 +33,3 @@ const NewsletterSection: React.FC = () => {
     </section>
   );
 };
-
-export default NewsletterSection;

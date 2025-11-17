@@ -1,4 +1,3 @@
-import React from "react";
 import { Star } from "lucide-react";
 
 interface Product {
@@ -51,7 +50,7 @@ const products: Product[] = [
   },
 ];
 
-const RecommendedProducts: React.FC = () => {
+export default function RecommendedProducts(){
   return (
     <section className="max-w-6xl mx-auto px-6 py-16">
       {/* Section Title */}
@@ -120,5 +119,3 @@ const RecommendedProducts: React.FC = () => {
     </section>
   );
 };
-
-export default RecommendedProducts;

@@ -1,4 +1,3 @@
-import React from "react";
 import { MoreHorizontal, Star } from "lucide-react";
 
 interface Review {
@@ -54,7 +53,7 @@ const reviews: Review[] = [
   },
 ];
 
-const ProductReviews: React.FC = () => {
+export default function ProductReviews(){
   return (
     <section className="max-w-8xl mx-auto px-6 py-16">
 
@@ -131,5 +130,3 @@ const ProductReviews: React.FC = () => {
     </section>
   );
 };
-
-export default ProductReviews;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 
 const images = [
@@ -11,7 +11,7 @@ const images = [
 const colors = ["#6B5F42", "#1D2B36", "#203A43", "#2E4A3E"];
 const sizes = ["Small", "Medium", "Large", "X-Large"];
 
-const ProductDetails: React.FC = () => {
+export default function ProductDetails(){
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState("Large");
@@ -133,8 +133,5 @@ const ProductDetails: React.FC = () => {
     </section>
   );
 };
-
-export default ProductDetails;
-
 
 
