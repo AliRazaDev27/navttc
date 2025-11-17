@@ -13,6 +13,7 @@ import Signin from './pages/signin';
 
 import Nav from './components/landing-page/nav.tsx';
 import Homepage from './components/landing-page/homepage.tsx';
+import ProductDetails from './components/product-page.tsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path:"/shop",
         element: <Shop/>
+      },
+      {
+        path:"/productDetails",
+        element: <ProductDetails/>
       },
       {
         path: "/signup",
