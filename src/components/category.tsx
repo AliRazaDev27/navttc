@@ -4,7 +4,7 @@ export default function Category() {
     <>
     <div className="flex gap-2 w-full bg-white py-8 px-8 text-gray-600 text-sm">
       <p>Home</p>
-      <p>></p>
+      <p>{">"}</p>
       <p>Casual</p>
     </div>
     <div className="flex w-full bg-white px-8">
