@@ -73,17 +73,17 @@ const prev = () => {
       <div className="flex justify-between items-center px-2 md:px-4">
         <h1 className="text-4xl md:text-5xl font-black">OUR HAPPY CUSTOMERS</h1>
          {/* Mobile Buttons */}
-        <div className="flex relative top-5 gap-3 px-4 md:hidden cursor-pointer ">
+        <div className="flex relative top-13 right-4 gap-3 px-4 md:hidden ">
           <button
             onClick={prev}
-            className="p-2 bg-white shadow rounded-full"
+            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
           >
             <ChevronLeft size={20} />
           </button>
 
           <button
             onClick={next}
-            className="p-2 bg-white shadow rounded-full">
+            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer">
             <ChevronRight size={20} />
           </button>
         </div>
@@ -91,13 +91,13 @@ const prev = () => {
         <div className="hidden md:flex gap-3 cursor-pointer">
           <button
             onClick={prev}
-            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200"
+            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
           >
             <ChevronLeft />
           </button>
           <button
             onClick={next}
-            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200"
+            className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 cursor-pointer"
           >
             <ChevronRight />
           </button>
@@ -106,7 +106,7 @@ const prev = () => {
        
 
       {/* SLIDER */}
-      <div className="relative mt-6 overflow-hidden ">
+      <div className="relative mt-6 overflow-hidden  ">
         <div
           className="flex transition-transform duration-500"
           style={{
@@ -116,9 +116,9 @@ const prev = () => {
           {reviews.map((r, i) => (
             <div
               key={i}
-              className="min-w-full md:min-w-[39%]   p-4 md:p-3"
+              className="min-w-full md:min-w-[39%] p-4 md:p-3"
             >
-              <div className="border rounded-xl p-5 shadow-sm bg-white h-50">
+              <div className="border rounded-xl p-5 shadow-sm bg-white cursor-pointer hover:bg-gray-50  h-50">
                 {/* Stars */}
                 <div className="text-yellow-500 text-lg mb-2">
                   {"★".repeat(r.rating)}
