@@ -31,17 +31,12 @@ export function Category() {
         <h1 className="text-center font-black text-3xl md:text-5xl md:pt-12 pt-4">
           BROWSE BY <br className="md:hidden" /> DRESS STYLE
         </h1>
-        <div className="flex flex-wrap justify-center gap-4 px-6 md:my-12  my-3">
+        <div className="flex flex-wrap justify-center gap-4 px-6 md:my-12 my-3">
           {items.map((item) => (
             <div
               key={item.title}
               style={{ backgroundImage: `url(${item.image})` }}
-              className={`
-                bg-cover bg-center rounded-xl overflow-hidden shadow-sm 
-                hover:shadow-md cursor-pointer transition
-                h-[200px] flex flex-col 
-                w-full ${item.width}`}
-            >
+              className={`bg-cover bg-center rounded-xl overflow-hidden shadow-sm hover:shadow-md cursor-pointer transitio h-[200px] flex flex-col hover:scale-105 w-full ${item.width}`}>
               <div className="p-3 text-lg font-medium">{item.title}</div>
             </div>
           ))}

@@ -24,13 +24,13 @@ export function ProductCard({
     : 0;
 
   return (
-    <div className="bg-white p-4 min-w-[150px] md:min-w-0">
+    <div className="bg-white border border-gray-300 rounded-md cursor-pointer hover:scale-105 transition p-4 min-w-[150px] md:min-w-0">
       {/* Image */}
-      <div className="bg-[#F0EEED] flex justify-center rounded-md md:h-80 h-32">
+      <div className="bg-[#F0EEED] flex justify-center rounded-md h-auto">
         <img
           src={image}
           alt={name}
-          className="w-full block h-auto rounded-md"
+          className="w-full block md:h-60 rounded-md"
         />
       </div>
 

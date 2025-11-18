@@ -45,7 +45,7 @@ export function NewArrivals() {
         NEW ARRIVALS
       </h2>
 
-      <div className="flex gap-0overflow-x-auto md:grid md:grid-cols-4 md:gap-2pb-4 pb-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {products.map((item) => (
           <ProductCard
             key={item.id}
@@ -60,7 +60,7 @@ export function NewArrivals() {
       </div>
       <Link
         to="#"
-        className=" mx-auto border border-gray-300 block text-center w-full md:w-fit bg-white text-black px-10 py-2.5 rounded-4xl"
+        className="hover:bg-black hover:text-white hover:border mx-auto border border-gray-300 block text-center w-full md:w-fit bg-white text-black px-10 py-2.5 rounded-4xl mt-6"
       >
         View All
       </Link>

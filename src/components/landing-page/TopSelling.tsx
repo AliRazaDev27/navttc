@@ -42,10 +42,8 @@ export function TopSelling() {
       <h2 className=" text-xl md:text-2xl font-black text-center mb-6">
         TOP SELLING
       </h2>
-
       <div
-        className="
-          flex gap-0overflow-x-auto  md:grid  md:grid-cols-4  md:gap-2 pb-4" >
+        className="grid grid-cols-2 md:grid-cols-4 gap-4" >
         {products.map((item) => (
           <ProductCard
             key={item.id}
@@ -59,7 +57,7 @@ export function TopSelling() {
       </div>
       <Link
         to="#"
-        className=" mx-auto border border-gray-300 block text-center w-full md:w-fit bg-white text-black px-10 py-2.5 rounded-4xl"
+        className="  hover:bg-black hover:text-white hover:border hover:border-white mt-6 mx-auto border border-gray-300 block text-center w-full md:w-fit bg-white text-black px-10 py-2.5 rounded-4xl"
       >
         View All
       </Link>
