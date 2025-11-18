@@ -15,6 +15,8 @@ import Nav from './components/landing-page/nav.tsx';
 import Homepage from './components/landing-page/homepage.tsx';
 import Footer from './components/footer.tsx';
 import Product from './pages/product/index.tsx';
+import Dashboard from './pages/dashboard/index.tsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -44,9 +46,51 @@ const router = createBrowserRouter([
       {
         path: "/signin",
         element: <Signin/>
-      }
+      },
      ]
-     }
+     },
+      {
+        path: "/dashboard",
+        element: <Dashboard/>,
+        children: [
+          {
+            index:true,
+            element: <div>Dashboard</div>
+          },
+          {
+            path: "users",
+            element: <div>Users</div> 
+          },
+          {
+            path: "products",
+            element: <div>Products</div>
+          },
+          {
+            path: "orders",
+            element: <div>Orders</div>
+          },
+          {
+            path: "inventory",
+            element: <div>Inventory</div>
+          },
+          {
+            path: "analytics",
+            element: <div>Analytics</div>
+          },
+          {
+            path: "customers",
+            element: <div>Customers</div>
+          },
+          {
+            path: "messages",
+            element: <div>Messages</div>
+          },
+          {
+            path: "settings",
+            element: <div>Settings</div>
+          }
+        ]
+      }
 ]);
 
 createRoot(document.getElementById('root')!).render(
