@@ -10,7 +10,6 @@ import { Provider } from 'react-redux'
 import Shop from './pages/shop';
 import Signup from './pages/signup';
 import Signin from './pages/signin';
-
 import Nav from './components/landing-page/nav.tsx';
 import Homepage from './components/landing-page/homepage.tsx';
 import ProductDetails from './components/product-page.tsx';

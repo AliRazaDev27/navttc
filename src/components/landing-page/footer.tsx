@@ -9,7 +9,6 @@ import applepay from '@/assets/LOGO/applepay.svg'
 import paypal from '@/assets/LOGO/paypal.svg'
 import visa from '@/assets/LOGO/visa.svg'
 import msg from '@/assets/msg.svg'
-
 import { Link } from "react-router";
 export function Footer() {
     return (

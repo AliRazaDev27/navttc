@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook,  FaInstagram, FaTwitter } from "react-icons/fa";
+// import { FaFacebook,  FaInstagram, FaTwitter } from "react-icons";
 
 const FooterSection: React.FC = () => {
   return (
@@ -20,13 +20,13 @@ const FooterSection: React.FC = () => {
             
             <div className="flex items-center gap-4 mt-6">
               <a className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition">
-                <FaFacebook size={18} />
+                {/* <FaFacebook size={18} /> */}
               </a>
               <a className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition">
-                <FaTwitter size={18} />
+                {/* <FaTwitter size={18} /> */}
               </a>
               <a className="p-2 bg-gray-100 rounded-full hover:bg-gray-200 transition">
-                <FaInstagram size={18} />
+                {/* <FaInstagram size={18} /> */}
               </a>
             </div>
           </div>
