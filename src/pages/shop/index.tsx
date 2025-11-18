@@ -1,5 +1,5 @@
 import shirt from "/image.png";
-export default function Category() {
+export default function Shop() {
   return (
     <>
     <div className="flex gap-2 w-full bg-white py-8 px-8 text-gray-600 text-sm">
