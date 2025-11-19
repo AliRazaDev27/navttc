@@ -1,9 +1,9 @@
 import { Link, Outlet } from "react-router";
 import cart from "@/assets/cart.svg"
-import profile from "@/assets/profile.svg"
 import search from "@/assets/search.svg"
 import menu from "@/assets/menu.svg"
 import searchMobile from "@/assets/search_mobile.svg"
+import Profile from "../profile";
 
 export default function Nav(){
   return(
@@ -37,10 +37,8 @@ export default function Nav(){
         <button>
           <img src={cart} alt="" />
         </button>
-        <button>
-          <img src={profile} alt="" />
-        </button>
-      </div>
+        <Profile/>
+              </div>
       </div>
     </header>
     <Outlet/>

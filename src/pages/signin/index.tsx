@@ -1,7 +1,9 @@
 import type { FormEvent } from "react";
 import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 export default function Signup() {
+  const navigate = useNavigate();
   const handleSumbit = (e:FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -10,8 +12,17 @@ export default function Signup() {
     if(!email || !password) return
     fetch('http://localhost:3000/auth/signin', {
       method: 'POST',
-      body: formData,
-    }).then(res=>res.json()).then(data=>console.log(data));
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({email,password})
+    }).then(res=>res.json()).then(data=>{
+      console.log(data);
+      if(data.success){
+        navigate('/');
+      }
+    });
 
     // somehow grab the data
   }

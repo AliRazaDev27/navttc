@@ -1,9 +1,30 @@
 import type { FormEvent } from "react"
+import { useNavigate } from "react-router";
 
 export default function Signup() {
-  const handleSumbit = (e:FormEvent)=>{
+  const navigate = useNavigate();
+  const handleSumbit = (e:FormEvent<HTMLFormElement>)=>{
     e.preventDefault();
     // somehow grab the data
+    const formData = new FormData(e.currentTarget);
+    fetch("http://localhost:3000/auth/signup",{
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        fullName: formData.get("fullName"),
+        email: formData.get("email"),
+        password: formData.get("password"),
+      })
+    }).then((res)=>res.json()).then(res=>{
+      if(res.success){
+        navigate("/login");
+      }
+      else{
+        alert(res.error);
+      }
+    })
   }
   return (
     <div className="w-full flex items-center justify-center min-h-screen bg-[url(./assets/signup-bg.png)] bg-no-repeat bg-contain">

@@ -14,7 +14,7 @@ export default function Footer(){
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
 
           
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <h2 className="text-3xl font-extrabold mb-4">SHOP.CO</h2>
             <p className="text-gray-600 leading-relaxed text-[15px]">
               We have clothes that suits your style and which you're proud to wear.
