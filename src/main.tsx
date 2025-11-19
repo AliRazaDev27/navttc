@@ -9,7 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 // import Header from './components/header';
 // import Homepage from './pages/homepage';
 import Shop from './pages/shop';
-import Signup from './pages/signup';
+import Signup from './pages/signup';k
 import Signin from './pages/signin';
 
 import Nav from './components/landing-page/nav.tsx';
