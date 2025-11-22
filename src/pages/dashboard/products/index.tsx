@@ -33,11 +33,12 @@ export default function DashboardProducts() {
   const paginatedProducts = filteredProducts.slice(startIdx, startIdx + itemsPerPage)
 
   useEffect(() => {
+    const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
     const fetchProducts = async () => {
       setLoading(true)
       setError(null)
       try {
-        const res = await fetch("http://localhost:3000/products")
+        const res = await fetch(`${baseUrl}/products`)
         if (!res.ok) throw new Error(`Fetch failed: ${res.status}`)
         const data = await res.json()
         if (data?.data.length) {
