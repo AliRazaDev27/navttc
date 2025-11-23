@@ -16,6 +16,7 @@ import Homepage from './components/landing-page/homepage.tsx';
 import Footer from './components/footer.tsx';
 import Product from './pages/product/index.tsx';
 import Dashboard from './pages/dashboard/index.tsx';
+import Users from './pages/dashboard/users/index.tsx';
 
 const router = createBrowserRouter([
   {
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
           },
           {
             path: "users",
-            element: <div>Users</div> 
+            element: <Users/> 
           },
           {
             path: "products",
