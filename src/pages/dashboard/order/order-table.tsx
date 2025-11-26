@@ -7,31 +7,30 @@ export const OrdersTable = ({ orders}:{orders:Order[]}) => {
         <table className="min-w-full bg-white text-sm">
           <thead className="bg-gray-100 text-gray-700 uppercase text-xs">
             <tr>
-              <th className="px-4 py-3 text-left">Order ID</th>
+              <th className="px-4 py-3 text-left">#</th>
               <th className="px-4 py-3 text-left">User</th>
               <th className="px-4 py-3 text-left">Items</th>
               <th className="px-4 py-3 text-left">Amount</th>
               <th className="px-4 py-3 text-left">Status</th>
               <th className="px-4 py-3 text-left">Payment</th>
-              <th className="px-4 py-3 text-left">Shipping</th>
               <th className="px-4 py-3 text-left">Actions</th>
             </tr>
           </thead>
 
           <tbody className="text-gray-700">
-            {orders?.map((order) => (
+            {orders?.map((order, index:number) => (
               <tr
                 key={order._id}
                 className="border-b hover:bg-gray-50 transition"
               >
                 {/* ORDER ID */}
                 <td className="px-4 py-3 font-medium">
-                  #{order._id.substring(0, 8)}
+                  {index + 1}
                 </td>
 
                 {/* USER */}
                 <td className="px-4 py-3">
-                  {order.user?.name || "Unknown User"}
+                  {`${order.user?.firstName} ${order.user?.lastName}`}
                   <br />
                   <span className="text-xs text-gray-500">
                     {order.shippingAddress?.phoneNumber}
@@ -80,20 +79,6 @@ export const OrdersTable = ({ orders}:{orders:Order[]}) => {
                     <span className="text-red-600 font-semibold">
                       Not Paid
                     </span>
-                  )}
-                </td>
-
-                {/* SHIPPING */}
-                <td className="px-4 py-3">
-                  {order.courierName ? (
-                    <>
-                      <div>{order.courierName}</div>
-                      <div className="text-xs text-gray-500">
-                        {order.trackingNumber}
-                      </div>
-                    </>
-                  ) : (
-                    <span className="text-gray-400">Not Assigned</span>
                   )}
                 </td>
 

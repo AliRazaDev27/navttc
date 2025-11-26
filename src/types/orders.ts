@@ -41,7 +41,8 @@ export interface Order {
   _id: string;
   user: {
     _id: string;
-    name: string;
+    firstName: string;
+    lastName: string;
     email: string;
   };
 

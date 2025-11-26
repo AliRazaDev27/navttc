@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { motion, time } from "framer-motion";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Edit, Trash, Plus } from "lucide-react";
 
 interface IUser {
@@ -21,13 +21,24 @@ export default function UsersPage() {
   const [users, setUsers] = useState<IUser[]>([]);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const [pageSize] = useState(5);
+  const [pageSize] = useState(10);
 
   // Fake data (replace with API when needed)
 
   useEffect(() => {
     // call api
+    const fetchUsers = async () => {
+      try {
+        const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+        const response = await fetch(`${baseUrl}/users`);
+        const result = await response.json();
+        setUsers(result.data);
+      } catch (error) {
+        console.error("Failed to fetch users:", error);
+      }
+    };
 
+    fetchUsers();
   }, []);
 
   // Search filter
@@ -79,7 +90,7 @@ export default function UsersPage() {
             <table className="min-w-full text-sm">
               <thead className="bg-gray-100">
                 <tr>
-                  <th className="p-3">_ID</th>
+                  <th className="p-3">#</th>
                   <th className="p-3">First_Name</th>
                   <th className="p-3">Last_Name</th>
                   <th className="p-3">Email</th>
@@ -87,14 +98,13 @@ export default function UsersPage() {
                   <th className="p-3">Role</th>
                   <th className="p-3">isActive</th>
                   <th className="p-3">createdAt</th>
-                  <th className="p-3">updatedAt</th>
                 </tr>
               </thead>
 
               <tbody>
-                {paginatedData.map((u) => (
+                {paginatedData.map((u, index: number) => (
                   <tr key={u._id} className="border-t">
-                    <td className="p-3">{u._id}</td>
+                    <td className="p-3">{index+1}</td>
                     <td className="p-3">{u.firstName}</td>
                     <td className="p-3">{u.lastName}</td>
                     <td className="p-3">{u.email}</td>
@@ -122,9 +132,7 @@ export default function UsersPage() {
                         <span className="text-gray-500">inactive</span>
                       )}
                     </td>
-                    <td className="p-3">{u.createdAt}</td>
-                    <td className="p-3">{u.updatedAt}</td>
-
+                    <td className="p-3">{new Date(u.createdAt).toLocaleDateString()}</td>
 
                     <td className="p-3 flex gap-3">
                       <Button
