@@ -5,7 +5,6 @@ import {NewArrivals } from "./NewArrivals";
 import {TopSelling } from "./TopSelling";
 import {Category} from "./category";
 import {Review} from "./review";
-import {Footer} from "./footer";
 export default function Homepage() {
   return (
     <main>
@@ -56,7 +55,6 @@ export default function Homepage() {
       <TopSelling />
       <Category />
       <Review />
-      <Footer />
     </main>
   );
 }
