@@ -21,6 +21,7 @@ import DashboardProducts from './pages/dashboard/products/index.tsx';
 import Orders from './pages/dashboard/order/index.tsx';
 
 import { Toaster } from 'sonner';
+import Cart from './pages/cart/index.tsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
         path:"/product/:slug",
         element: <Product/>
       },
+      {
+        path:"/checkout",
+        element: <Cart/>
+      }
         ]
       },
       {
