@@ -9,6 +9,7 @@ import {
 import type { IProduct } from "@/types"
 import DeleteProduct from "./delete-product"
 import EditProduct from "./edit-product"
+import ManageProductGallery from "./manage-product-gallery"
 export default function ProductTable({paginatedProducts}:{paginatedProducts: IProduct[]}) {
   return(
       <div className="rounded-lg border">
@@ -45,6 +46,7 @@ export default function ProductTable({paginatedProducts}:{paginatedProducts: IPr
                   <TableCell className="text-right">{product.rating}</TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
+                      <ManageProductGallery id={product._id}/>
                       <EditProduct/>
                       <DeleteProduct id={product._id}/>
                     </div>
