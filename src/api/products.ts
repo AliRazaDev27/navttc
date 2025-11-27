@@ -84,3 +84,64 @@ export async function getProductBySlug(slug: string): Promise<IProduct | null> {
     return null;
   }
 }
+
+export async function uploadImages(formData: FormData): Promise<{ success: boolean, data: string[] } | null> {
+  try {
+    const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/products/${formData.get('productId')}`, {
+      method: 'PUT',
+      body: formData,
+    });
+    if (!response.ok) {
+      throw new Error(`Error uploading images: ${response.statusText}`);
+    }
+    const result = await response.json();
+    if (!result.success) {
+      throw new Error(`Error uploading images: ${result.message}`);
+    }
+    return result;
+  } catch (error: unknown) {
+    console.error("Failed to upload images:", (error as Error).message);
+    return null;
+  }
+}
+
+export async function updateProduct(id: string, product: Partial<IProduct>): Promise<IProduct | null> {
+  try {
+    const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/products/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(product),
+    });
+    if (!response.ok) {
+      throw new Error(`Error updating product: ${response.statusText}`);
+    }
+    const result = await response.json();
+    if (!result.success) {
+      throw new Error(`Error updating product: ${result.message}`);
+    }
+    return result.data as IProduct;
+  } catch (error: unknown) {
+    console.error("Failed to update product:", (error as Error).message);
+    return null;
+  }
+}
+
+export async function deleteProductImage(productId: string, imageUrl: string): Promise<boolean> {
+  try {
+    const baseUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/products/${productId}/${encodeURIComponent(imageUrl)}`, {
+      method: 'delete',
+    });
+    if (!response.ok) {
+      throw new Error(`Error deleting product image: ${response.statusText}`);
+    }
+    return true;
+  } catch (error: unknown) {
+    console.error("Failed to delete product image:", (error as Error).message);
+    return false;
+  }
+}

@@ -46,7 +46,7 @@ export default function ProductTable({paginatedProducts}:{paginatedProducts: IPr
                   <TableCell className="text-right">{product.rating}</TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
-                      <ManageProductGallery id={product._id}/>
+                      <ManageProductGallery product={product}/>
                       <EditProduct/>
                       <DeleteProduct id={product._id}/>
                     </div>

@@ -5,6 +5,7 @@ import type { IProduct } from "@/types";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/store/features/cart/cartSlice";
 import { toast } from "sonner";
+import { getImage } from "@/lib/utils";
 
 export default function ProductDetails({slug}: {slug: string | undefined}) {
   const [product, setProduct] = useState<IProduct | null>(null);
@@ -52,7 +53,7 @@ export default function ProductDetails({slug}: {slug: string | undefined}) {
           {product?.images?.map((img, index) => (
             <img
               key={index}
-              src={img}
+              src={getImage(img)}
               className={`w-28 h-32.5 rounded-xl object-cover cursor-pointer border-2 ${
                 index === selectedImage ? "border-blue-500" : "border-gray-200"
               }`}
@@ -64,7 +65,7 @@ export default function ProductDetails({slug}: {slug: string | undefined}) {
         
         <div className="flex-1">
           <img
-            src={product?.thumbnail}
+            src={getImage(product?.thumbnail || "")}
             className="w-full h-[420px] object-cover rounded-xl border-2 border-blue-400"
           />
         </div>
